@@ -1,11 +1,11 @@
 ﻿using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI;
-using IFCLocation.Commands;
+using PositionIFC.Commands;
 using System;
 using System.Reflection;
 using System.Windows.Media.Imaging;
 
-namespace IFCLocation;
+namespace PositionIFC;
 public class App : IExternalApplication
 {
     // get the absolute path of this assembly
@@ -40,17 +40,17 @@ public class App : IExternalApplication
     private RibbonPanel RibbonPanel(UIControlledApplication application)
     {
 
-        RibbonPanel panel = CachedUiCtrApp.CreateRibbonPanel("IFCLocation_Panel");
-        panel.Title = "IFCLocation";
+        RibbonPanel panel = CachedUiCtrApp.CreateRibbonPanel("PositionIFC_Panel");
+        panel.Title = "PositionIFC";
 
         PushButton button = (PushButton)panel.AddItem(
             new PushButtonData(
                 "CommandPositionIFC",
                 "Position IFC",
                 Assembly.GetExecutingAssembly().Location,
-                $"{nameof(IFCLocation)}.{nameof(Commands)}.{nameof(CommandPositionIFC)}"));
-        button.ToolTip = "Execute the IFCLocation command";
-        button.LargeImage = PngImageSource("IFCLocation.Resources.IFCLocation_Button.png");
+                $"{nameof(PositionIFC)}.{nameof(Commands)}.{nameof(CommandPositionIFC)}"));
+        button.ToolTip = "Execute the PositionIFC command";
+        button.LargeImage = PngImageSource("IFCLocation.Resources.PositionIFC_Button.png");
 
         return panel;
     }

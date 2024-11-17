@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Advanced Installer
+installer/*.back.aip
+installer/PositionIFC-cache/*
+installer/PositionIFC-SetupFiles/*

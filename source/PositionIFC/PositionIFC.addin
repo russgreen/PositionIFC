@@ -10,10 +10,10 @@
   </AddIn>-->
   
   <AddIn Type="Application">
-    <Name>IFCLocation</Name>
-    <Assembly>IFCLocation.dll</Assembly>
+    <Name>PositionIFC</Name>
+    <Assembly>PositionIFC.dll</Assembly>
 	<AddInId>73561ABF-4D09-4B12-A5F8-23A23CFB1294</AddInId>
-    <FullClassName>IFCLocation.App</FullClassName>
+    <FullClassName>PositionIFC.App</FullClassName>
     <VendorId>ARBG</VendorId>
 	<VisibilityMode>NotVisibleInFamily</VisibilityMode>
 	<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>

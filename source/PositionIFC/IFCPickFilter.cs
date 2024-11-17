@@ -1,7 +1,7 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI.Selection;
 
-namespace IFCLocation;
+namespace PositionIFC;
 internal class IFCPickFilter : ISelectionFilter
 {
     public bool AllowElement(Element elem)

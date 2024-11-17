@@ -83,11 +83,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="Resources\IFCLocation_Button.png" />
+		<EmbeddedResource Include="Resources\PositionIFC_Button.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="IFCLocation.addin">
+		<None Update="PositionIFC.addin">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
@@ -95,16 +95,16 @@
 	<!-- Build debug manifest at build time -->
 	<Target Name="CreateAddinManifest" AfterTargets="AfterBuild">
 		<ItemGroup>
-			<AddinManifest Include="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\IFCLocation.addin" />
+			<AddinManifest Include="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\PositionIFC.addin" />
 		</ItemGroup>
-		<ReplaceFileText InputFilename="IFCLocation.addin" OutputFilename="@(AddinManifest)" MatchExpression="Assembly&gt;(.*?)&lt;" ReplacementText="Assembly&gt;$(TargetDir)$(AssemblyName).dll&lt;" />
+		<ReplaceFileText InputFilename="PositionIFC.addin" OutputFilename="@(AddinManifest)" MatchExpression="Assembly&gt;(.*?)&lt;" ReplacementText="Assembly&gt;$(TargetDir)$(AssemblyName).dll&lt;" />
 		<ReplaceFileText InputFilename="@(AddinManifest)" OutputFilename="@(AddinManifest)" MatchExpression="&lt;VendorId&gt;(.*?)&lt;" ReplacementText="&lt;VendorId&gt;$(PackageId)&lt;" />
 		<ReplaceFileText InputFilename="@(AddinManifest)" OutputFilename="@(AddinManifest)" MatchExpression="&lt;FullClassName&gt;(.*?)&lt;" ReplacementText="&lt;FullClassName&gt;$(RootNamespace).App&lt;" />
 	</Target>
 	
 	<!-- Clean up debug manifest -->
 	<Target Name="CleanupAddinManifest" AfterTargets="AfterClean">
-		<Delete Files="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\IFCLocation.addin" />
+		<Delete Files="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\PositionIFC.addin" />
 	</Target>
 
 	<UsingTask Condition="'$(MSBuildRuntimeType)' == 'Full'" TaskName="ReplaceFileText" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
